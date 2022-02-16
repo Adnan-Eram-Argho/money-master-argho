@@ -32,10 +32,9 @@ document.getElementById('save-btn').addEventListener('click', function (e) {
     ids.push('save');
     errorHands(ids);
     // save amount
-    let spendAbleMoney = parseFloat(income.value) - (parseFloat(income.value) * (parseFloat(inputId('save').value) / 100));
-    inputId('save-amount').innerText = parseFloat(income.value) - spendAbleMoney;
-    inputId('remain-amount').innerText = inputId('Balance').innerText - inputId('save-amount').innerText;
+    inputId('save-amount').innerText = (parseFloat(income.value) * (parseFloat(inputId('save').value) / 100));
     // remain ammount
+    inputId('remain-amount').innerText = inputId('Balance').innerText - inputId('save-amount').innerText;
     if (inputId('remain-amount').innerText <= 0) {
         alert('you should have spent less this mounth')
     }
