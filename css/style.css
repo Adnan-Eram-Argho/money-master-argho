@@ -1,3 +1,21 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
 h1{
-    color:red;
+    color:tomato;
+    font-weight:bold;
+}
+.money-counter-part{
+    background-color: #F8F8F8;
+}
+.header-tag{
+    font-weight:600;
+}
+.universal-button{
+    background-color: tomato;
+    color:white;
+ 
+}
+.universal-button:hover{
+    color:white;
 }
