@@ -9,6 +9,7 @@ function errorHands(ids) {
     for (const id of ids) {
         if (inputId(id).value <= 0) {
             alert('plese write a positive number in ' + id)
+            break
         } else if (isNaN(parseFloat(inputId(id).value)) == true || inputId(id).value == '') {
             alert('plese write a number in the input box of ' + id);
             break
