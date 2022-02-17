@@ -6,13 +6,23 @@ function inputId(id) {
 }
 //error handeling
 function errorHands(ids) {
+    let letters = ['a', 'b', 'd', 'c', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'w', 'x', 'y', 'z'];
+
     for (const id of ids) {
-        if (inputId(id).value <= 0) {
-            alert('plese write a positive number in ' + id)
-            break
-        } else if (isNaN(parseFloat(inputId(id).value)) == true || inputId(id).value == '') {
-            alert('plese write a number in the input box of ' + id);
-            break
+        for (const letter of letters) {
+            if (inputId(id).value.toLowerCase().includes(letter)) {
+                alert('plese write a number in the input box of ' + id);
+                break;
+            } else {
+                if (inputId(id).value <= 0) {
+                    alert('plese write a positive number in ' + id)
+                    break
+                } else if (isNaN(parseFloat(inputId(id).value)) == true || inputId(id).value == '' || inputId(id).value.toLowerCase().includes(letter)) {
+                    debugger
+                    alert('plese write a number in the input box of ' + id);
+                    break
+                }
+            }
         }
     }
 }
@@ -30,7 +40,7 @@ document.getElementById('calc-btn').addEventListener('click', function (e) {
 })
 // save button
 document.getElementById('save-btn').addEventListener('click', function (e) {
-    ids.push('save');
+    ids[4] = 'save';
     errorHands(ids);
     // save amount
     inputId('save-amount').innerText = (parseFloat(income.value) * (parseFloat(inputId('save').value) / 100));
